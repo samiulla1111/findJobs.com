@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+}
+
+.input-container{
+    height: 15vh;
+    background-color: lightcoral;
+}
+
+.task-container{
+    height: 85vh;
+    background-color: rgb(51, 51, 168);
+    color: white;
+    text-align: center;
+    font-family: 'Zen Dots',cursive;
+}
+
+li{
+    list-style: none;
+    font-size: 1.25rem;
+    background-color: blue;
+    width:60vh;
+    height: 1.5rem;
+}
+
+.input_box{
+    font-family: 'zen Dots',cursive;
+    height: 60%;
+    font-size: 1.25rem;
+}

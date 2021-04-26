@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Outlook Fan Market</title>
+    <script type="text/javascript">
+
+    function billCalculation(){
+        var us=document.getElementById("usha").value;
+        var ba=document.getElementById("bajaj").value;
+        var or=document.getElementById("orient").value;
+        var ha=document.getElementById("havells").value;
+        var cr=document.getElementById("crompton").value;
+        var lu=document.getElementById("luminous").value;
+        var ma=document.getElementById("maharaja").value;
+
+        var res=0;
+        res=((1999*us)+(1500*ba)+(2100*or)+(1785*ha)+(1960*cr)+(1655*lu)+(2249+ma));
+        if(res>5500){
+            res=res-(res*0.15);
+        }
+
+        document.getElementById("result").innerHTML="Hi,You have to pay Rs."+res+"Thanks for selecting us!!!";
+        return false;
+    }
+
+    function cleardata(){
+        document.getElementById("namee").innerHTML="";
+        document.getElementById("contactNo").innerHTML="";
+        document.getElementById("email").innerHTML="";
+        document.getElementById("usha").value="";
+        document.getElementById("bajaj").value="";
+        document.getElementById("orient").value="";
+        document.getElementById("havells").value="";
+        document.getElementById("crompton").value="";
+        document.getElementById("luminous").value="";
+        document.getElementById("maharaja").value="";
+        document.getElementById("date").innerHTML="";
+        document.getElementById("address").innerHTML="";
+    }
+    </script>
+
+    <style type="text/css">
+    ::placeholder{
+        color: #6a5acd;
+        opacity: 2;
+    }
+
+    input[type="email"],input[type="tel"],
+    input[type="number"],input[type="text"],
+    input[type="date"],textarea,select{
+        width: 85%;
+        color: #808b96;
+        font-weight: bold;
+        border-radius: 6px;
+        border-style: solid;
+        border-width: 2px;border-color: #ffa07a;
+    }
+
+    input[type="submit"]{
+        background-color: #08088A;
+    }
+    label span{
+        color: #f0f8ff;
+    }
+
+    body{
+        background-color: #2e4053;
+    }
+
+    h1{
+        color: #ffffff;
+        font-family: Verdana;
+        border-style: 1px solid;
+        border-radius: 6px;
+        width: 50%;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #1a5276;
+        text-align: center;
+    }
+
+    #result{
+        font-weight: bold;
+        font-family: bahnschrift;
+        font-size: 24px;
+        margin-right: auto;
+        margin-left: 18em;
+        color: #b3b6b7;
+    }
+
+    #submit{
+        font-weight: bold;
+        font-family: bahnschrift;
+        color: #ffefd5;
+        background: transparent;
+        margin-right: auto;
+        width: 13em;
+        height: 35px;
+        margin-left: 35em;
+    }
+
+    #reset{
+        font-weight: bold;
+        font-family: bahnschrift;
+        color: #ffefd5;
+        background: transparent;
+        margin-right: auto;
+        width: 13em;
+        height: 35px;
+        margin-left: 18em;
+    }
+
+    table{
+        width: 50%;
+        margin-right: auto;
+        margin-left: auto;
+        border-style: 3px groove;
+        border-spacing: 5px;
+        border-radius: 6px;
+    }
+
+    #billing td{
+        border-width: 1px;
+        border-style: solid;
+        border-color: #f4a460;
+        padding: 5px;
+    }
+
+    .b{
+        width: 50%;
+        margin-right: 14em;
+        margin-left: auto;
+    }
+
+    #brandName td{
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        border-width: 1px;
+        border-style: solid;
+        border-spacing: 5px;
+        border-radius: 6px;
+    }
+
+    #submit:hover,#reset:hover{
+        background-color: #2E8857;
+        color: #ffffff;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Outlook Fan Market</h1>
+
+    <form onsubmit="return billCalculation()">
+        <table id="billing">
+            <tr>
+                <th id="details" colspan="2"></th>
+            </tr>
+
+            <tr>
+                <td>
+                    <label><span>
+                        <b>
+                            Name*
+                        </b>
+                    </span></label>
+                </td>
+                <td>
+                    <input type="text" id="name" placeholder="Enter the name">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label><span>
+                        <b>
+                            contactNo*
+                        </b>
+                    </span></label>
+                </td>
+                <td>
+                    <input type="tel" id="contactNo" placeholder="Enter the Contact no">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label><span>
+                        <b>
+                            E-mail adress
+                        </b>
+                    </span></label>
+
+                </td>
+                <td>
+                    <input type="email" id="email" placeholder="Example:abc@gmail.com">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label><span>
+                        <b>
+                            Brand Name
+                        </b>
+                    </span></label>
+
+                </td>
+
+                <td>
+                    <table id="brandName">
+                        <tr>
+                            <td>
+                                <label><span>
+                                    <b>
+                                        Usha
+                                    </b>
+                                </span></label>
+                            </td>
+                            <td>
+                                <input type="number" id="usha" name="usha" min="0">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label><span>
+                                    <b>
+                                        Bajaj
+                                    </b>
+                                </span></label>
+                            </td>
+                            <td>
+                                <input type="number" id="bajaj" min="0">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label><span>
+                                    <b>
+                                     Orient
+                                    </b>
+                                </span></label>
+                            </td>
+                            <td>
+                                <input type="number" id="orient" min="0">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label><span>
+                                    <b>
+                                        Havells
+                                    </b>
+                                </span></label>
+                            </td>
+                            <td>
+                                <input type="number" id="havells" min="0">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label><span>
+                                    <b>
+                                        Crompton
+                                    </b>
+                                </span></label>
+                            </td>
+                            <td>
+                                <input type="number" id="crompton" min="0">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label><span>
+                                    <b>
+                                        Luminous
+                                    </b>
+                                </span></label>
+                            </td>
+                            <td>
+                                <input type="number" id="luminous" min="0">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label><span>
+                                    <b>
+                                        Maharaja
+                                    </b>
+                                </span></label>
+                            </td>
+                            <td>
+                                <input type="number" id="Maharaja" min="0">
+                            </td>
+                        </tr>
+
+
+                    </table>
+                </td>
+               
+            </tr>
+
+            <tr>
+                <td>
+                    <label><span>
+                        <b>
+                            Date of Booking*
+                        </b>
+                    </span></label>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <input type="date" id="date" placeholder="mm/dd/yyyy">
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label><span>
+                        <b>
+                            Address
+                        </b>
+                    </span></label>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <input type="textarea" id="address" placeholder="Enter the address">
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit" id="submit" value="Submit">
+                </td>
+                <td>
+                    <input type="reset" id="reset" onclick="cleardata()" value="clear">
+                </td>
+                
+            </tr>
+
+        </table>
+        <p class="b">
+            <div id="result"></div>
+        </p>
+    </form>
+
+</body>
+
+</html>

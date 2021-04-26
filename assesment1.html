@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        ATLAS PACKERS AND MOVERS
+    </title>
+    <style>
+        .left {
+            left: 0;
+        }
+
+        .right {
+            right: 0;
+            background-color: #548AE3;
+            width: 60%;
+            padding: 10px;
+        }
+
+        .b {
+            color: #FFFFFF;
+        }
+
+        .c {
+            color: #c21807;
+            font-size: 15px;
+            font-family: "Georgia";
+        }
+
+        #image {
+            width: 80%;
+            height: 90%;
+        }
+
+        h3 {
+            margin-right: auto;
+            margin-left: auto;
+            text-align: center;
+            width: 50%;
+            font-family: "Georgia";
+            border-radius: 6px;
+
+        }
+
+        table,
+        th,
+        td {
+            border-spacing: 2px;
+            font-size: 15px;
+            font-family: "Georgia";
+            border-radius: 6px;
+            padding: 3px;
+            border: 1px solid white;
+        }
+
+        td {
+            color: #FFFFFF;
+            background-color: #548AE3;
+            border-spacing: 5px;
+        }
+
+        #submit {
+            color: #c21807;
+            font-weight: bold;
+            background-color: #FFFFFF;
+            font-size: 15px;
+            font-family: "Georgia";
+            border-radius: 6px;
+            padding: 3px;
+        }
+
+        #submit:hover {
+            background-color: #FF0000;
+            color: #FFFFFF;
+        }
+
+        h3 {
+            color: #c21807;
+            font-weight: bold;
+            background-color: #FFFFFF;
+            font-size: 15px;
+            font-family: "Geogia";
+            border-radius: 6px;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td><div><img src="packers.jpg" id="image">
+                </div></td>
+                <div>
+                    <center>
+                        <h3>
+                            ATLAS PACKERS AND MOVERS
+                        </h3>
+                    </center>
+                    <form>
+                        <table>
+                            <tr>
+                                <td colspan="2">
+                                    <a href="#reloc" id="reloc_info"
+                                    class="b">Relocation-info</a><br>
+                                    <a href="#personal" id="personal_info" class="b">
+                                        personal_info
+                                    </a>
+                                    <br>
+                                    <a href="#quote" id="quote_info" class="b">Get a quote!</a><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <label id="reloc" class="c">
+                                        Relocation Information
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2">
+                                    <label id="reloc" class="c">Relocation Information
+
+                                    </label>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <select name="city" required>
+                                        <option value="Select your current city">Select your current city
+                                        
+                                        </option>
+                                        <option value="Chennai">Chennai</option>
+                                        <option value="Banglore">Banglore</option>
+                                        <option value="Hyderbad">Hyderbad</option>
+                                        <option value="Mumbai">Mumbai</option>
+                                    <!-- </list> -->
+                                    </select>
+                                </td>
+                                <td><input type="date" id="date">required</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Select Category</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="category" id="home" required><label for="home">
+                                        Home Relocation
+                                    </label> 
+                                    <input type="radio" name="category" id="factory" required>
+                                    <label for="factory">Factory/Office Relocation</label>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <textarea id="faddress" placeholder="From address" cols="50" rows="4" required>
+
+                                    </textarea>
+                                </td>
+                                <td><textarea id="taddress" cols="50" placeholder="To address" rows="4" required>
+
+                                </textarea></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label>Distance in km(approx)</label>
+                                </td>
+                                <td><input type="range" id="distance" min=0 max=2000 required>
+                                </td>
+                            </tr>
+                            <tr><td colspan="2">
+                                <label id="personal Information"></label>
+                            </td></tr>
+
+                            <tr>
+                                <td>
+                                    <label>Customer Name</label>
+                                </td>
+                                <td><input type="text" id="cname" placeholder="Enter the customer name" pattern="[A-Za-z\\s]*" required>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label>Phone Number</label>
+                                </td>
+                                <td>
+                                    <input type="tel" pattern="[7,8,9]{1}[0-9]{9}" id="phno" placeholder="Enter the phone number" required >
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2">
+                                    <label id="quote" class="c">Get a quote:</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Possible Charges involved</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="category" id="packing">
+                                    <label for="packing">Packing Charges</label>
+                                    <input type="checkbox" name="category" id="loading">
+                                    <label for="loading">Loading Charges</label>
+                                    <input type="checkbox" name="category" id="transportation">
+                                    <label for="transportation">Transportation/label>
+                                    <input type="checkbox" name="category" id="unloading">
+                                    <label for="unloading">Unloading</label>
+                                    <input type="checkbox" name="category" id="unpacking">
+                                    <label for="unpacking">Unpacking Charges</label>
+                                    <input type="checkbox" name="category" id="escort">
+                                    <label for="escort">Escort Charges</label>
+                                    <input type="checkbox" name="category" id="octrol">
+                                    <label for="octrol">Octrol Charges</label>
+
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <label>**Quote you recieve will include service tax of 12.3%</label>
+                                </td>
+
+                            </tr>
+                            <button type="submit" id="submit" value="GET A QUOTE">GET A QUOTE
+                                
+                            </button>
+                    </form>
+                </div>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

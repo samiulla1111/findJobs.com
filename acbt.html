@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connection</title>
+    <style>
+        h1 {
+            color: #006666;
+            text-align: center;
+        }
+
+        body {
+            text-align: center;
+            background-color: #EED426;
+            Style
+        }
+
+        table {
+            margin-left: 40%;
+        }
+        #mobileerror{
+            color: red;
+        }
+        #durationerror{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ACBT Connection Portal</h1>
+    <!-- <form action=""> -->
+    <div>
+        <label for="custname">Customer Name</label>
+        <input id="custname" type="text" placeholder="Enter the customer name" required>
+    </div>
+    <br>
+
+    <div>
+        <label for="email">Customer Email</label>
+        <input id="email" type="email" placeholder="abc@gmail.com" required>
+    </div>
+    <br>
+
+    <div>
+        <label for="mobile">Mobile Number</label>
+        <input id="mobile" type="text" placeholder="Enter the customer name" required><br>
+        <span id="mobileerror"></span>
+    </div>
+    <br>
+    <label for="conntype">Connection Type</label>
+    <select name="conntype" id="conntype">
+        <option value="Pre">Pre</option>
+        <option value="Post">Post</option>
+    </select><br><br>
+
+
+    <span>Scheme Name</span>
+    <input type="radio" id="scheme1" name="scheme" value="Local">
+    <label for="scheme1">Local</label>
+    <input type="radio" id="scheme2" name="scheme" value="STD">
+    <label for="scheme2">STD</label>
+    <input type="radio" id="scheme3" name="scheme" value="FullTalkTime">
+    <label for="scheme3">FullTalkTime</label><br><br>
+
+    <div>
+        <label for="duration">Connection Duration</label>
+        <input id="duration" type="text" placeholder="Enter the customer name"> <br>
+        <span id="durationerror"></span><br><br>
+
+    </div>
+    <input type="button" id="submit" onclick="myFunction()" value="Connection Bill Amount">
+    <input type="button" id="clear" onclick="reset()" value="Reset">
+
+    <!-- </form> -->
+
+    <p id="result"></p>
+
+    <p>Rental Cost Table</p>
+    <table border="1" id="rentalcost">
+        <tr>
+            <th>Connection Type</th>
+            <th>Call Limit</th>
+            <th>Monthly Rental</th>
+        </tr>
+        <tr>
+            <td>Pre</td>
+            <td>500</td>
+            <td>75</td>
+        </tr>
+        <tr>
+            <td>Post</td>
+            <td>Unlimited</td>
+            <td>150</td>
+        </tr>
+    </table>
+
+    <script>
+        function reset(){
+            let userName = document.getElementById('custname');
+
+            let email = document.getElementById('email');
+
+            let mobile = document.getElementById('mobile');
+            let ConnectionType = document.getElementById('conntype');
+            let duration = document.getElementById('duration');
+            let result = document.getElementById('result');
+
+            userName.value='';
+            email.value='';
+            mobile.value='';
+            duration.value='';
+            result.innerText='';
+
+            if (document.getElementById('scheme1').checked) {
+                check = document.getElementById('scheme1');
+                check.checked=false;
+            }
+            else if (document.getElementById('scheme2').checked) {
+                check = document.getElementById('scheme2');
+                check.checked=false;
+            }
+            else if (check = document.getElementById('scheme3').checked) {
+                check = document.getElementById('scheme3');
+                check.checked=false;
+
+            }
+
+        }
+        function getRadioButton() {
+            let check = "";
+            if (document.getElementById('scheme1').checked) {
+                check = document.getElementById('scheme1').value;
+            }
+            else if (document.getElementById('scheme2').checked) {
+                check = document.getElementById('scheme2').value;
+            }
+            else if (check = document.getElementById('scheme3').checked) {
+                check = document.getElementById('scheme3').value;
+
+            }
+
+            return check;
+        }
+        function myFunction() {
+            let userName = document.getElementById('custname').value;
+
+            let email = document.getElementById('email').value;
+
+            let mobile = document.getElementById('mobile').value;
+
+            let ConnectionType = document.getElementById('conntype');
+            let connectType = ConnectionType.options[ConnectionType.selectedIndex].text;
+
+            let duration = (Number)(document.getElementById('duration').value);
+
+            let scheme = getRadioButton();
+
+            let result = document.getElementById('result');
+
+            let firstNumber = (Number)(mobile.charAt(0));
+
+            let errorAcccured=false;
+
+            if (mobile.length != 10) {
+               let error=document.getElementById("mobileerror");
+               error.innerText=mobile+" phone number is invalid";
+               errorAcccured=true;
+            }
+            else if (firstNumber != 9 && firstNumber != 8 && firstNumber != 7) {
+                let error=document.getElementById("mobileerror");
+               error.innerText=mobile+" is invalid phone number";
+               errorAcccured=true;
+            }
+
+            if (duration < 1 || duration > 12) {
+               let error=document.getElementById("durationerror");
+               error.innerText="Duration has to be between greater than 1 less than 12";
+               errorAcccured=true;
+            }
+
+            if(!errorAcccured){
+                let costPerMonth = 0;
+                if (scheme === "Local") {
+                    costPerMonth = 200;
+                }
+                else if (scheme === "STD") {
+                    costPerMonth = 350;
+                }
+                else {
+                    costPerMonth = 500;
+                }
+
+
+                if (ConnectionType === "Pre") {
+                    TotalMonthlyRentalCost = (duration * costPerMonth) + 75;
+                    result.innerText = "The Total Monthly Rental Cost if Rs." + TotalMonthlyRentalCost;
+                }
+                else {
+                    TotalMonthlyRentalCost = (duration * costPerMonth) + 150;
+                    result.innerText = "The Total Monthly Rental Cost if Rs." + TotalMonthlyRentalCost;
+                }
+            }
+
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
